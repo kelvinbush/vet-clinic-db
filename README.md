@@ -1,31 +1,26 @@
-# curriculum-databases-projects-template
+# Vet clinic db files
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
-
+This repository contains sql query files for setting up the `vet-clinic` database and its tables. 
 
 ## Getting Started
+To get a local copy up and running follow these simple example steps.
 
-This repository includes files with plain SQL that can be used to recreate a database:
-
+- Copy this link `https://github.com/kelvinbush/vet-clinic-db.git `.
+- Get the directory that you want to clone the repository.
+- Open the command prompt in this directory.
+- Write `https://github.com/kelvinbush/vet-clinic-db.git`.
+- Go to the repository folder in your command prompt `cd vet-clinic-db`.
+- Create a database in your postgres server.
 - Use [schema.sql](./schema.sql) to create all tables.
 - Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
-
+- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database.
 
 ## Authors
+👤 **Kelvin Bush**
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@kelvinbush](https://github.com/kelvinbush)
+- Twitter: [@kelvin_bush_](https://twitter.com/kelvin_bush_)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kelvin-wachiye-04b469173/)
 
 ## 🤝 Contributing
 
