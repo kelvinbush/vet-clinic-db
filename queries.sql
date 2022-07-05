@@ -35,7 +35,7 @@ COMMIT;
 
 /* Queries to answer questions below*/
 SELECT count(*) from animals;
-SELECT count(*) from animals WHERE escape_attempts > 0;
+SELECT count(*) from animals WHERE escape_attempts < 1;
 SELECT AVG(weight_kg) FROM animals;
 
 SELECT neutered, Max(escape_attempts) FROM animals GROUP BY neutered;
