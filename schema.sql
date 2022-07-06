@@ -4,10 +4,18 @@ CREATE TABLE animals
 (
     id              SERIAL PRIMARY KEY,
     name            VARCHAR(25),
-    date_of_birth   DATE            NOT NULL DEFAULT CURRENT_DATE,
+    date_of_birth   DATE NOT NULL DEFAULT CURRENT_DATE,
     escape_attempts INT,
     neutered        BOOLEAN,
     weight_kg       DECIMAL
 );
 
-ALTER TABLE animals ADD COLUMN species VARCHAR (25);
+ALTER TABLE animals
+    ADD COLUMN species VARCHAR(25);
+
+CREATE TABLE owners
+(
+    id        SERIAL PRIMARY KEY,
+    full_name VARCHAR(25),
+    age       INT
+)
