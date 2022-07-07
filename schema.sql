@@ -29,12 +29,41 @@ CREATE TABLE species
 ALTER TABLE animals
     DROP column species;
 
-ALTER TABLE animals ADD COLUMN species_id INT;
+ALTER TABLE animals
+    ADD COLUMN species_id INT;
 ALTER TABLE animals
     ADD CONSTRAINT fk_species
         FOREIGN KEY (species_id) REFERENCES species (id);
 
-ALTER TABLE animals ADD COLUMN owners_id INT;
+ALTER TABLE animals
+    ADD COLUMN owners_id INT;
 ALTER TABLE animals
     ADD CONSTRAINT fk_owners
         FOREIGN KEY (owners_id) REFERENCES owners (id);
+
+create table vets
+(
+    id                 serial primary key,
+    name               varchar(25),
+    age                int,
+    date_of_graduation date
+);
+
+create table specializations
+(
+    species_id int,
+    vet_id     int,
+    primary key (species_id, vet_id),
+    constraint fk_species FOREIGN KEY (species_id) references species (id),
+    constraint fk_vets FOREIGN KEY (vet_id) references vets (id)
+);
+
+create table visits
+(
+    id serial primary key,
+    animal_id     int,
+    vet_id        int,
+    date_of_visit date,
+    constraint fk_animal FOREIGN KEY (animal_id) references animals (id),
+    constraint fk_vets FOREIGN KEY (vet_id) references vets (id)
+);
