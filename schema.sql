@@ -43,16 +43,27 @@ ALTER TABLE animals
 
 create table vets
 (
-    id serial primary key,
-    name varchar (25),
-    age int,
+    id                 serial primary key,
+    name               varchar(25),
+    age                int,
     date_of_graduation date
 );
 
-create table specializations (
+create table specializations
+(
     species_id int,
-    vet_id int,
+    vet_id     int,
     primary key (species_id, vet_id),
-    constraint fk_species FOREIGN KEY (species_id) references species(id),
-    constraint fk_vets FOREIGN KEY (vet_id) references vets(id)
+    constraint fk_species FOREIGN KEY (species_id) references species (id),
+    constraint fk_vets FOREIGN KEY (vet_id) references vets (id)
+);
+
+create table visits
+(
+    animal_id     int,
+    vet_id        int,
+    date_of_visit date,
+    primary key (animal_id, vet_id),
+    constraint fk_animal FOREIGN KEY (animal_id) references animals (id),
+    constraint fk_vets FOREIGN KEY (vet_id) references vets (id)
 );
