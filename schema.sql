@@ -51,9 +51,9 @@ create table vets
 
 create table specializations
 (
+    id         serial primary key,
     species_id int,
     vet_id     int,
-    primary key (species_id, vet_id),
     constraint fk_species FOREIGN KEY (species_id) references species (id),
     constraint fk_vets FOREIGN KEY (vet_id) references vets (id)
 );
