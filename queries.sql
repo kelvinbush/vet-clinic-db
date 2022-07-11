@@ -189,4 +189,23 @@ from animals
          join visits v on animals.id = v.animal_id
          join vets v2 on v2.id = v.vet_id
 where v2.name = 'Maisy Smith'
-group by s.name order by count desc limit 1;
+group by s.name
+order by count desc
+limit 1;
+
+explain analyze
+SELECT COUNT(*)
+FROM visits
+where animal_id = 4;
+
+explain analyze
+SELECT *
+FROM visits
+where vet_id = 2;
+
+explain analyze
+SELECT *
+FROM owners
+where email = 'owner_18327@mail.com';
+
+

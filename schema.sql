@@ -60,7 +60,7 @@ create table specializations
 
 create table visits
 (
-    id serial primary key,
+    id            serial primary key,
     animal_id     int,
     vet_id        int,
     date_of_visit date,
@@ -68,4 +68,9 @@ create table visits
     constraint fk_vets FOREIGN KEY (vet_id) references vets (id)
 );
 
-ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+ALTER TABLE owners
+    ADD COLUMN email VARCHAR(120);
+
+create index animal_id_asc on visits (animal_id asc);
+create index vet_id_idx on visits (vet_id asc);
+create index owner_email_idx on owners(email asc);
